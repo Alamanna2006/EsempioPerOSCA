@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officina OSCA – Ammortizzatori, Assetti Sportivi, Gommista Milano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
+         :root {
+            --red: #D72B2B;
+            --red-dark: #A81F1F;
+            --black: #0D0D0D;
+            --dark: #111111;
+            --surface: #1A1A1A;
+            --surface2: #232323;
+            --bone: #F0EEE9;
+            --mid: #888888;
+            --light: #CCCCCC;
+        }
+        
+        html {
+            scroll-behavior: smooth
+        }
+        
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--black);
+            color: var(--bone);
+            overflow-x: hidden
+        }
+        /* NAV */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4vw;
+            height: 68px;
+            background: rgba(13, 13, 13, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(215, 43, 43, 0.2)
+        }
+        
+        .nav-logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.7rem;
+            letter-spacing: 0.08em;
+            color: var(--bone);
+            text-decoration: none
+        }
+        
+        .nav-logo span {
+            color: var(--red)
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color .2s
+        }
+        
+        .nav-links a:hover {
+            color: var(--red)
+        }
+        
+        .nav-cta {
+            background: var(--red);
+            color: #fff;
+            padding: 0.5rem 1.4rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background .2s
+        }
+        
+        .nav-cta:hover {
+            background: var(--red-dark)
+        }
+        /* HERO */
+        
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: hidden;
+            padding-top: 68px
+        }
+        
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8vh 4vw 8vh 6vw;
+            position: relative;
+            z-index: 2
+        }
+        
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--red);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem
+        }
+        
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 2px;
+            background: var(--red)
+        }
+        
+        h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(4rem, 8vw, 7.5rem);
+            line-height: 0.92;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            color: var(--bone);
+            margin-bottom: 1.5rem
+        }
+        
+        h1 em {
+            font-style: italic;
+            color: var(--red)
+        }
+        
+        .hero-sub {
+            font-size: 1rem;
+            color: var(--mid);
+            line-height: 1.7;
+            max-width: 380px;
+            margin-bottom: 2.5rem;
+            font-weight: 300
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap
+        }
+        
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background .2s, transform .15s
+        }
+        
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px)
+        }
+        
+        .btn-outline {
+            border: 1px solid rgba(240, 238, 233, 0.3);
+            color: var(--bone);
+            padding: 0.9rem 2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: border-color .2s, background .2s
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--red);
+            background: rgba(215, 43, 43, 0.08)
+        }
+        
+        .hero-right {
+            position: relative;
+            display: flex;
+            align-items: stretch
+        }
+        
+        .hero-visual {
+            width: 100%;
+            background: var(--surface);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        
+        .hero-bg-text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(12rem, 22vw, 22rem);
+            color: rgba(215, 43, 43, 0.07);
+            line-height: 1;
+            text-transform: uppercase;
+            position: absolute;
+            right: -2vw;
+            bottom: -2vh;
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            user-select: none
+        }
+        
+        .hero-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            width: 100%;
+            position: relative;
+            z-index: 2
+        }
+        
+        .hero-card {
+            flex: 1;
+            padding: 2rem 2.5rem;
+            border-left: 3px solid transparent;
+            transition: border-color .2s, background .2s
+        }
+        
+        .hero-card:hover {
+            border-left-color: var(--red);
+            background: rgba(215, 43, 43, 0.05)
+        }
+        
+        .hero-card-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--red);
+            opacity: 0.5;
+            line-height: 1
+        }
+        
+        .hero-card-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+            color: var(--bone)
+        }
+        
+        .hero-card-desc {
+            font-size: 0.8rem;
+            color: var(--mid);
+            margin-top: 0.3rem;
+            line-height: 1.5
+        }
+        
+        .red-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--red)
+        }
+        /* SERVIZI STRIP */
+        
+        .strip {
+            background: var(--red);
+            padding: 1rem 4vw;
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            white-space: nowrap
+        }
+        
+        .strip-item {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: 0.85;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-shrink: 0
+        }
+        
+        .strip-item::after {
+            content: '—';
+            opacity: 0.4
+        }
+        
+        .strip-item:last-child::after {
+            display: none
+        }
+        /* SECTIONS */
+        
+        section {
+            padding: 8vh 6vw
+        }
+        
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--red);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.2rem
+        }
+        
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 1.5px;
+            background: var(--red)
+        }
+        
+        h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            text-transform: uppercase;
+            line-height: 0.95;
+            color: var(--bone);
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em
+        }
+        
+        h2 span {
+            color: var(--red)
+        }
+        /* SERVIZI */
+        
+        .servizi {
+            background: var(--dark)
+        }
+        
+        .servizi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-top: 4rem
+        }
+        
+        .servizio-item {
+            background: var(--dark);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: background .25s
+        }
+        
+        .servizio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .3s
+        }
+        
+        .servizio-item:hover {
+            background: var(--surface)
+        }
+        
+        .servizio-item:hover::before {
+            transform: scaleX(1)
+        }
+        
+        .servizio-n {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: rgba(215, 43, 43, 0.15);
+            line-height: 1;
+            margin-bottom: 0.5rem
+        }
+        
+        .servizio-name {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--bone);
+            margin-bottom: 0.6rem
+        }
+        
+        .servizio-desc {
+            font-size: 0.85rem;
+            color: var(--mid);
+            line-height: 1.6;
+            font-weight: 300
+        }
+        
+        .servizio-icon {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            color: var(--red);
+            font-size: 1.5rem;
+            opacity: 0.4
+        }
+        /* MARCHI */
+        
+        .marchi {
+            background: var(--black)
+        }
+        
+        .marchi-intro {
+            max-width: 520px;
+            font-size: 1rem;
+            color: var(--mid);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            font-weight: 300
+        }
+        
+        .marchi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem
+        }
+        
+        .marchio-card {
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 2rem;
+            border-radius: 2px;
+            transition: border-color .25s, background .25s;
+            position: relative
+        }
+        
+        .marchio-card:hover {
+            border-color: rgba(215, 43, 43, 0.5);
+            background: var(--surface2)
+        }
+        
+        .marchio-logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--bone);
+            margin-bottom: 0.5rem
+        }
+        
+        .marchio-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            background: rgba(215, 43, 43, 0.15);
+            color: var(--red);
+            padding: 0.2rem 0.6rem;
+            border-radius: 1px;
+            margin-bottom: 0.75rem;
+            font-weight: 600
+        }
+        
+        .marchio-desc {
+            font-size: 0.8rem;
+            color: var(--mid);
+            line-height: 1.6;
+            font-weight: 300
+        }
+        /* PNEUMATICI */
+        
+        .pneumatici {
+            background: var(--surface);
+            position: relative;
+            overflow: hidden
+        }
+        
+        .pneum-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6vw;
+            align-items: center
+        }
+        
+        .pneum-reasons {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem
+        }
+        
+        .pneum-reason {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: start
+        }
+        
+        .pneum-reason-n {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--red);
+            line-height: 1;
+            opacity: 0.7
+        }
+        
+        .pneum-reason-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--bone);
+            text-transform: uppercase;
+            margin-bottom: 0.2rem
+        }
+        
+        .pneum-reason-text span {
+            font-size: 0.82rem;
+            color: var(--mid);
+            line-height: 1.55;
+            font-weight: 300
+        }
+        
+        .pneum-visual {
+            position: relative;
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        
+        .tire-circle {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 28px solid var(--surface2);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        
+        .tire-inner {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column
+        }
+        
+        .tire-inner-text {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+            line-height: 1.1
+        }
+        
+        .tire-tread {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 8px dashed rgba(215, 43, 43, 0.2);
+            animation: spin 20s linear infinite
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+        
+        .tire-label {
+            position: absolute;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mid)
+        }
+        
+        .tl-top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        .tl-right {
+            right: -4rem;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        
+        .tl-bottom {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        
+        .tl-left {
+            left: -4rem;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        /* CHI SIAMO */
+        
+        .chi {
+            background: var(--black)
+        }
+        
+        .chi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6vw;
+            align-items: start;
+            margin-top: 4rem
+        }
+        
+        .chi-text p {
+            font-size: 1rem;
+            color: var(--mid);
+            line-height: 1.8;
+            font-weight: 300;
+            margin-bottom: 1.2rem
+        }
+        
+        .chi-text p strong {
+            color: var(--bone);
+            font-weight: 600
+        }
+        
+        .chi-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem
+        }
+        
+        .chi-highlight {
+            border-left: 2px solid var(--red);
+            padding-left: 1.2rem
+        }
+        
+        .chi-hl-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--bone);
+            margin-bottom: 0.3rem
+        }
+        
+        .chi-hl-text {
+            font-size: 0.85rem;
+            color: var(--mid);
+            line-height: 1.6;
+            font-weight: 300
+        }
+        /* CONTATTI */
+        
+        .contatti {
+            background: var(--surface);
+            position: relative;
+            overflow: hidden
+        }
+        
+        .contatti::before {
+            content: 'OSCA';
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(10rem, 20vw, 18rem);
+            color: rgba(215, 43, 43, 0.05);
+            position: absolute;
+            right: -2vw;
+            bottom: -2vh;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            pointer-events: none
+        }
+        
+        .contatti-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6vw;
+            position: relative;
+            z-index: 2
+        }
+        
+        .contatti-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 1rem
+        }
+        
+        .contact-block {}
+        
+        .contact-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--red);
+            font-weight: 700;
+            margin-bottom: 0.5rem
+        }
+        
+        .contact-value {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--bone);
+            text-decoration: none;
+            display: block;
+            transition: color .2s
+        }
+        
+        .contact-value:hover {
+            color: var(--red)
+        }
+        
+        .contact-value.small {
+            font-size: 1.1rem
+        }
+        
+        .orari-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-top: 0.5rem
+        }
+        
+        .orari-item {
+            background: var(--surface2);
+            padding: 1rem;
+            border-radius: 2px
+        }
+        
+        .orari-day {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--mid);
+            font-weight: 600;
+            margin-bottom: 0.3rem
+        }
+        
+        .orari-time {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bone)
+        }
+        
+        .map-placeholder {
+            background: var(--surface2);
+            border-radius: 2px;
+            height: 100%;
+            min-height: 360px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden
+        }
+        
+        .map-address {
+            text-align: center
+        }
+        
+        .map-address strong {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--bone);
+            margin-bottom: 0.3rem
+        }
+        
+        .map-address span {
+            font-size: 0.85rem;
+            color: var(--mid)
+        }
+        
+        .map-pin {
+            width: 48px;
+            height: 48px;
+            background: var(--red);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.5rem
+        }
+        
+        .map-pin::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--surface2);
+            border-radius: 50%
+        }
+        
+        .map-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none
+        }
+        
+        .btn-directions {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: var(--red);
+            color: #fff;
+            padding: 0.75rem 1.75rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: background .2s
+        }
+        
+        .btn-directions:hover {
+            background: var(--red-dark)
+        }
+        /* FOOTER */
+        
+        footer {
+            background: var(--black);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 2.5rem 6vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem
+        }
+        
+        .footer-brand {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: var(--bone)
+        }
+        
+        .footer-brand span {
+            color: var(--red)
+        }
+        
+        .footer-info {
+            font-size: 0.75rem;
+            color: rgba(136, 136, 136, 0.7);
+            text-align: center
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--mid);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: border-color .2s, color .2s
+        }
+        
+        .social-link:hover {
+            border-color: var(--red);
+            color: var(--red)
+        }
+        /* MOBILE */
+        
+        @media(max-width:768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto
+            }
+            .hero-right {
+                display: none
+            }
+            .hero-left {
+                padding: 6vh 5vw
+            }
+            h1 {
+                font-size: 4rem
+            }
+            .pneum-grid,
+            .chi-grid,
+            .contatti-grid {
+                grid-template-columns: 1fr
+            }
+            .pneum-visual {
+                height: 260px
+            }
+            .tire-circle {
+                width: 220px;
+                height: 220px
+            }
+            .tire-inner {
+                width: 110px;
+                height: 110px
+            }
+            section {
+                padding: 6vh 5vw
+            }
+            .marchi-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+            .map-placeholder {
+                min-height: 240px
+            }
+            footer {
+                flex-direction: column;
+                text-align: center
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <a class="nav-logo" href="#">O.S.C.<span>A.</span></a>
+        <ul class="nav-links">
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#marchi">Marchi</a></li>
+            <li><a href="#officina">Officina</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+        <a href="tel:+390245241466" class="nav-cta">Chiama ora</a>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="red-line"></div>
+        <div class="hero-left">
+            <div class="hero-eyebrow">Officina specializzata · Milano</div>
+            <h1>La tua auto.<br><em>La nostra</em><br>passione.</h1>
+            <p class="hero-sub">Da generazioni il punto di riferimento per ammortizzatori, assetti sportivi e manutenzione auto nel cuore di Milano.</p>
+            <div class="hero-btns">
+                <a href="#servizi" class="btn-primary">Scopri i servizi</a>
+                <a href="#contatti" class="btn-outline">Dove siamo</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-visual">
+                <div class="hero-bg-text">OSCA</div>
+                <div class="hero-cards">
+                    <div class="hero-card">
+                        <div class="hero-card-num">01</div>
+                        <div class="hero-card-title">Ammortizzatori</div>
+                        <div class="hero-card-desc">Sachs, KYB, Koni, Bilstein — i migliori marchi installati da esperti</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-num">02</div>
+                        <div class="hero-card-title">Assetti Sportivi</div>
+                        <div class="hero-card-desc">Setup personalizzato per prestazioni e tenuta di strada ottimali</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-num">03</div>
+                        <div class="hero-card-title">Gommista & Freni</div>
+                        <div class="hero-card-desc">Cambio gomme stagionale, pastiglie e dischi freno di qualità</div>
+                    </div>
+                    <div class="hero-card">
+                        <div class="hero-card-num">04</div>
+                        <div class="hero-card-title">Tagliandi & Service</div>
+                        <div class="hero-card-desc">Manutenzione ordinaria e ricarica condizionatori auto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- STRIP -->
+    <div class="strip">
+        <div class="strip-item">Ammortizzatori</div>
+        <div class="strip-item">Assetti Sportivi</div>
+        <div class="strip-item">Freni & Dischi</div>
+        <div class="strip-item">Molle di Rinforzo</div>
+        <div class="strip-item">Gommista</div>
+        <div class="strip-item">Tagliandi</div>
+        <div class="strip-item">Condizionatori</div>
+        <div class="strip-item">GPL & Camper</div>
+    </div>
+
+    <!-- SERVIZI -->
+    <section class="servizi" id="servizi">
+        <div class="section-label">I nostri servizi</div>
+        <h2>Tutto per la <span>tua auto</span></h2>
+        <div class="servizi-grid">
+            <div class="servizio-item">
+                <div class="servizio-n">01</div>
+                <div class="servizio-name">Ammortizzatori</div>
+                <div class="servizio-desc">Sostituzione e revisione con i migliori marchi del settore. Diagnosi precisa per comfort e sicurezza.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">02</div>
+                <div class="servizio-name">Assetti Sportivi</div>
+                <div class="servizio-desc">Regolazione professionale dell'assetto per massimizzare grip, stabilità e piacere di guida.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">03</div>
+                <div class="servizio-name">Freni & Dischi</div>
+                <div class="servizio-desc">Sostituzione pastiglie e dischi freno. Controllo impianto frenante completo per la massima sicurezza.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">04</div>
+                <div class="servizio-name">Molle di Rinforzo</div>
+                <div class="servizio-desc">Soluzioni per veicoli commerciali, camper e GPL. Molle rinforzate per carichi gravosi.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">05</div>
+                <div class="servizio-name">Servizio Gommista</div>
+                <div class="servizio-desc">Montaggio, bilanciatura e cambio stagionale gomme estive e invernali. Controllo pressioni incluso.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">06</div>
+                <div class="servizio-name">Tagliandi & Manutenzione</div>
+                <div class="servizio-desc">Tagliandi ordinari e straordinari, cambio olio, filtri e controllo generale del veicolo.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">07</div>
+                <div class="servizio-name">Ricarica Condizionatori</div>
+                <div class="servizio-desc">Ricarica e sanificazione climatizzatori auto. Verifica fughe e sostituzione componenti.</div>
+            </div>
+            <div class="servizio-item">
+                <div class="servizio-n">08</div>
+                <div class="servizio-name">Diagnostica</div>
+                <div class="servizio-desc">Strumenti diagnostici avanzati per leggere errori e pianificare interventi mirati ed economici.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARCHI AMMORTIZZATORI -->
+    <section class="marchi" id="marchi">
+        <div class="section-label">I nostri partner</div>
+        <h2>I marchi che <span>montiamo</span></h2>
+        <p class="marchi-intro">Collaboriamo solo con i produttori più affidabili del settore, garantendo qualità e durata su ogni tipo di veicolo.</p>
+        <div class="marchi-grid">
+            <div class="marchio-card">
+                <div class="marchio-logo">Sachs</div>
+                <div class="marchio-tag">Gruppo ZF</div>
+                <div class="marchio-desc">Leader mondiale per veicoli di lusso e sportivi. Prestazioni elevate unite a una durata eccezionale.</div>
+            </div>
+            <div class="marchio-card">
+                <div class="marchio-logo">KYB</div>
+                <div class="marchio-tag">Kayaba Japan</div>
+                <div class="marchio-desc">Produttore giapponese di riferimento globale. Gamma completa OEM e aftermarket per ogni veicolo.</div>
+            </div>
+            <div class="marchio-card">
+                <div class="marchio-logo">Koni</div>
+                <div class="marchio-tag">Regolabili</div>
+                <div class="marchio-desc">Specialisti olandesi degli ammortizzatori regolabili. La scelta degli appassionati di tuning e motorsport.</div>
+            </div>
+            <div class="marchio-card">
+                <div class="marchio-logo">Eibach</div>
+                <div class="marchio-tag">Molle Sportive</div>
+                <div class="marchio-desc">Sistemi molle ad alte prestazioni per chi cerca sensazioni da pista nella guida di tutti i giorni.</div>
+            </div>
+            <div class="marchio-card">
+                <div class="marchio-logo">Bilstein</div>
+                <div class="marchio-tag">Made in Germany</div>
+                <div class="marchio-desc">Ammortizzatori premium tedeschi per auto sportive e sospensioni di alta gamma. Qualità certificata.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PNEUMATICI -->
+    <section class="pneumatici">
+        <div class="pneum-grid">
+            <div>
+                <div class="section-label">Sicurezza su strada</div>
+                <h2>Gomme sempre <span>in forma</span></h2>
+                <div class="pneum-reasons">
+                    <div class="pneum-reason">
+                        <div class="pneum-reason-n">1</div>
+                        <div class="pneum-reason-text">
+                            <strong>Aderenza ottimale</strong>
+                            <span>Pneumatici usurati aumentano le distanze di frenata e il rischio di perdita di controllo.</span>
+                        </div>
+                    </div>
+                    <div class="pneum-reason">
+                        <div class="pneum-reason-n">2</div>
+                        <div class="pneum-reason-text">
+                            <strong>Rispetto delle normative</strong>
+                            <span>Il battistrada deve rispettare il limite legale di 1,6 mm. Noi lo controlliamo ad ogni visita.</span>
+                        </div>
+                    </div>
+                    <div class="pneum-reason">
+                        <div class="pneum-reason-n">3</div>
+                        <div class="pneum-reason-text">
+                            <strong>Risparmio a lungo termine</strong>
+                            <span>Controlli regolari prevengono usura anomala e proteggono da danni molto più costosi.</span>
+                        </div>
+                    </div>
+                    <div class="pneum-reason">
+                        <div class="pneum-reason-n">4</div>
+                        <div class="pneum-reason-text">
+                            <strong>Prestazioni migliorate</strong>
+                            <span>Gomme in ottime condizioni migliorano stabilità, consumi e comportamento dinamico.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pneum-visual">
+                <div class="tire-tread"></div>
+                <div class="tire-circle">
+                    <div class="tire-inner">
+                        <div class="tire-inner-text">Sicuro<br>sempre</div>
+                    </div>
+                </div>
+                <span class="tire-label tl-top">Estate</span>
+                <span class="tire-label tl-right">Inverno</span>
+                <span class="tire-label tl-bottom">All Season</span>
+                <span class="tire-label tl-left">Run Flat</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section class="chi" id="officina">
+        <div class="section-label">La nostra officina</div>
+        <h2>Esperienza di <span>generazioni</span></h2>
+        <div class="chi-grid">
+            <div class="chi-text">
+                <p>L'<strong>Officina O.S.C.A.</strong> nasce dalla passione per le automobili e da una lunga tradizione familiare nel settore automobilistico milanese. Siamo nel cuore di Milano, in Via Fratelli Bozzi 29.</p>
+                <p>Il nostro spazio è <strong>moderno e funzionale</strong>: sollevatori di ultima generazione, strumenti diagnostici avanzati e attrezzature specifiche per ogni tipo di intervento. L'atmosfera è professionale ma familiare — ogni cliente
+                    si sente seguito e valorizzato.</p>
+                <p>Ogni intervento viene eseguito con <strong>precisione e cura</strong>, perché per noi la vostra sicurezza non è un optional.</p>
+            </div>
+            <div class="chi-highlights">
+                <div class="chi-highlight">
+                    <div class="chi-hl-title">Qualità garantita</div>
+                    <div class="chi-hl-text">Solo ricambi e materiali selezionati dai migliori produttori europei e giapponesi. Nessun compromesso sulla qualità.</div>
+                </div>
+                <div class="chi-highlight">
+                    <div class="chi-hl-title">Passione e professionalità</div>
+                    <div class="chi-hl-text">Amiamo quello che facciamo e si vede nei risultati. Ogni auto trattata come se fosse la nostra.</div>
+                </div>
+                <div class="chi-highlight">
+                    <div class="chi-hl-title">Esperienza tramandata</div>
+                    <div class="chi-hl-text">Da generazioni la cura delle auto è il nostro mestiere. Una storia di fiducia costruita cliente dopo cliente.</div>
+                </div>
+                <div class="chi-highlight">
+                    <div class="chi-hl-title">Attrezzatura avanzata</div>
+                    <div class="chi-hl-text">Sollevatori e strumenti diagnostici di ultima generazione per diagnosi accurate e interventi precisi.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section class="contatti" id="contatti">
+        <div class="section-label">Trovaci</div>
+        <h2>Vieni a <span>trovarci</span></h2>
+        <div class="contatti-grid">
+            <div class="contatti-info">
+                <div class="contact-block">
+                    <div class="contact-label">Telefono</div>
+                    <a href="tel:+390245241466" class="contact-value">+39 02 4521466</a>
+                </div>
+                <div class="contact-block">
+                    <div class="contact-label">WhatsApp</div>
+                    <a href="https://wa.me/393474262320" class="contact-value">+39 02 4521466 </a>
+                </div>
+                <div class="contact-block">
+                    <div class="contact-label">Email</div>
+                    <a href="mailto:info@officinaosca.it" class="contact-value small">info@officinaosca.it</a>
+                </div>
+                <div class="contact-block">
+                    <div class="contact-label">Orari</div>
+                    <div class="orari-grid">
+                        <div class="orari-item">
+                            <div class="orari-day">Lunedì — Venerdì</div>
+                            <div class="orari-time">09:00 – 18:30</div>
+                        </div>
+                        <div class="orari-item">
+                            <div class="orari-day">Sabato & Domenica</div>
+                            <div class="orari-time">Chiuso</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="map-placeholder">
+                    <div class="map-grid-bg"></div>
+                    <div class="map-pin"></div>
+                    <div class="map-address">
+                        <strong>Via F.lli Bozzi, 29</strong>
+                        <span>Milano, 20153</span>
+                    </div>
+                    <a href="https://maps.google.com/?q=Via+Fratelli+Bozzi+29+Milano" target="_blank" class="btn-directions">Ottieni indicazioni →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">O.S.C.<span>A.</span></div>
+        <div class="footer-info">
+            di Camia Andrea Antonio · P.IVA 13448970155<br> © 2026 Officina O.S.C.A. — Tutti i diritti riservati
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=100063672963818" class="social-link" target="_blank">FB</a>
+            <a href="https://www.instagram.com/officina.osca/" class="social-link" target="_blank">IG</a>
+            <a href="https://wa.me/393474262320" class="social-link" target="_blank">WA</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
